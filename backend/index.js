@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
 import { connectDB } from "./db/connectDB.js";
 import authRoutes from "./routes/auth.route.js";
 
@@ -10,6 +11,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware để parse JSON trong body của các request
 app.use(express.json());
+app.use(cookieParser());
 
 // Kết nối đến cơ sở dữ liệu
 (async () => {
