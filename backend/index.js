@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 import cookieParser from "cookie-parser";
 import { connectDB } from "./db/connectDB.js";
 import authRoutes from "./routes/auth.route.js";
@@ -8,6 +9,8 @@ dotenv.config(); // Load biến môi trường từ .env
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 
 // Middleware để parse JSON trong body của các request
 app.use(express.json());
