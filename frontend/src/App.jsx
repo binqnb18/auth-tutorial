@@ -6,7 +6,7 @@ import LoginPage from "./pages/LoginPage";
 import EmailVerificationPage from "./pages/EmailVerificationPage";
 import DashboardPage from "./pages/DashboardPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
-import ResetPasswordPage from "./pages/ResetPasswordPage";
+// import ResetPasswordPage from "./pages/ResetPasswordPage";
 
 import LoadingSpinner from "./components/LoadingSpinner";
 
@@ -93,14 +93,14 @@ function App() {
 					}
 				/>
 
-				<Route
+				{/* <Route
 					path='/reset-password/:token'
 					element={
 						<RedirectAuthenticatedUser>
 							<ResetPasswordPage />
 						</RedirectAuthenticatedUser>
 					}
-				/>
+				/> */}
 				{/* catch all routes */}
 				<Route path='*' element={<Navigate to='/' replace />} />
 			</Routes>
